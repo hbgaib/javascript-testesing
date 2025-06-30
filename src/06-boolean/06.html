@@ -26,93 +26,19 @@ tie = ${tieCounter}`)"
 
 			<button
 				class="btn btn-orange gunting"
-				onclick="
-computerPickMove();
-
-console.log(randomPick);
-computerPick = `komputer milih ${randomPick}!!`;
-
-if (randomPick === 'gunting') {
-	console.log(tieMessage);
-	tieCounter++;
-	result = tieMessage;
-} else if (randomPick === 'batu') {
-	console.log(loseMessage);
-	result = loseMessage;
-	loseCounter++;
-} else if (randomPick === 'kertas') {
-	console.log(winMessage);
-	winCounter++;
-	result = winMessage;
-}
-
-alert(`${computerPick}
-${result}`);
-
-"
-			>
+				onclick="playGame('gunting')">
 				Gunting
 			</button>
 
 			<button
 				class="btn btn-orange batu"
-				onclick="
-
-computerPickMove();
-
-console.log(randomPick);
-computerPick = `komputer milih ${randomPick}!!`;
-
-if (randomPick === 'gunting') {
-	console.log(winMessage);
-	winCounter++;
-	result = winMessage;
-} else if (randomPick === 'batu') {
-	console.log(tieMessage);
-	result = tieMessage;
-	tieCounter++;
-} else if (randomPick === 'kertas') {
-	console.log(loseMessage);
-	loseCounter++;
-	result = loseMessage;
-}
-
-alert(`${computerPick}
-${result}`);
-			"
-			>
+				onclick="playGame('batu')">
 				batu
 			</button>
 
 			<button
 				class="btn btn-orange kertas"
-				onclick="
-
-computerPickMove();
-
-console.log(randomPick);
-computerPick = `komputer milih ${randomPick}!!`;
-
-if (randomPick === 'gunting') {
-	console.log(loseMessage);
-	result = loseMessage;
-	loseCounter++;
-
-} else if (randomPick === 'batu') {
-	console.log(winMessage);
-	result = winMessage;
-	winCounter++;
-
-} else if (randomPick === 'kertas') {
-	console.log(tieMessage);
-	result = tieMessage;
-	tieCounter++;
-}
-
-alert(`${computerPick}
-${result}`);
-			"
-			>
+				onclick="playGame('kertas');">
 				kertas
 			</button>
 		</div>
@@ -211,8 +137,6 @@ ${result}`);
 				tail
 			</button>
 		</div>
-
-
 
 		<script src="06.js"></script>
 	</body>

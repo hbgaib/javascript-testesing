@@ -1,5 +1,7 @@
 import js from '@eslint/js';
 import globals from 'globals';
+import prettier from 'eslint-config-prettier';
+import tailwind from 'eslint-plugin-tailwindcss';
 
 export default [
 	{
@@ -7,7 +9,10 @@ export default [
 		files: ['**/*.{js,mjs,cjs}'],
 
 		// Plugin & preset JS official
-		plugins: { js },
+		plugins: {
+			js,
+			tailwind,
+		},
 
 		// Global yang dikenali + parserOptions
 		languageOptions: {
@@ -23,6 +28,10 @@ export default [
 
 		// Aturan kustommu
 		rules: {
+			...prettier.rules,
+			'tailwindcss/classnames-order': 'warn',
+			'tailwindcss/no-custom-classname': 'warn',
+			'tailwindcss/no-contradicting-classname': 'error',
 			indent: ['error', 'tab'],
 			quotes: ['error', 'single'],
 			semi: ['error', 'always'],

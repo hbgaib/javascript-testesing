@@ -26,13 +26,8 @@ console.log(`items in cart = ${cartQuantity};`);"
 			<button
 				class="btn btn-orange"
 				onclick="
-				if (cartQuantity < 10) {
-					cartQuantity++
-				} else (
-					console.log('cart penuh guoblok, batas 10')
-				)
-
-console.log(`items in cart = ${cartQuantity};`);"
+				updateCartQuantity(+1);
+"
 			>
 				add to cart
 			</button>
@@ -40,16 +35,7 @@ console.log(`items in cart = ${cartQuantity};`);"
 			<button
 				class="btn btn-orange"
 				onclick="
-				if (cartQuantity < 9) {
-					cartQuantity+=2
-				} else if (cartQuantity===9){
-					cartQuantity++;
-					console.log('cart penuh, batas 10')
-				}
-				else {
-					console.log('cart penuh guoblok, batas 10')
-				}
-console.log(`items in cart = ${cartQuantity};`);"
+				updateCartQuantity(+2);"
 			>
 				add to cart x2
 			</button>
@@ -57,13 +43,7 @@ console.log(`items in cart = ${cartQuantity};`);"
 			<button
 				class="btn btn-orange"
 				onclick="
-				if (cartQuantity > 0) {
-					cartQuantity--
-				} else (
-					console.log('cart kosong guoblok')
-				)
-
-console.log(`items in cart = ${cartQuantity};`);"
+				updateCartQuantity((-1));"
 			>
 				remove from cart
 			</button>
@@ -71,16 +51,7 @@ console.log(`items in cart = ${cartQuantity};`);"
 			<button
 				class="btn btn-orange"
 				onclick="
-				if (cartQuantity > 1) {
-					cartQuantity-=2
-				} else if (cartQuantity===1){
-					cartQuantity--;
-					console.log('cart kosong')
-				}
-				else {
-					console.log('cart kosong guoblok')
-				}
-console.log(`items in cart = ${cartQuantity};`);"
+				updateCartQuantity((-2))"
 			>
 				remove from cart x2
 			</button>
