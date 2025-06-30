@@ -20,21 +20,3 @@ html {
 
 	--horizontalpadding: 2rem;
 }
-
-body {
-	padding: 2rem var(--horizontalpadding);
-}
-
-.btn {
-	padding: 0.25rem 0.5rem;
-	border: none;
-	margin-top: 1rem;
-}
-
-.btn-orange {
-	background-color: orange;
-}
-
-.btn-yellow {
-	background-color: yellow;
-}

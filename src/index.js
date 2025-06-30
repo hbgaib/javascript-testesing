@@ -1,4 +1,6 @@
-const greet = (name) => {
-	console.log('Hello, ${name}!');
-};
-greet('World');
+// const greet = (name) => {
+// 	console.log('Hello, ${name}!');
+// };
+// greet('World');
+
+// alert('welcome');

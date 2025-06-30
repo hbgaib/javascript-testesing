@@ -28,7 +28,6 @@ body {
 .btn {
 	padding: 0.25rem 0.5rem;
 	border: none;
-	margin-top: 1rem;
 }
 
 .btn-orange {
@@ -37,4 +36,12 @@ body {
 
 .btn-yellow {
 	background-color: yellow;
+}
+
+.menu {
+	margin-top: 2rem;
+}
+
+.menu li {
+	margin-top: .5rem;
 }
