@@ -26,9 +26,12 @@ console.log(`items in cart = ${cartQuantity};`);"
 			<button
 				class="btn btn-orange"
 				onclick="
-//cartQuantity = cartQuantity + 1;
-//shortcutnya itu
-cartQuantity++;
+				if (cartQuantity < 10) {
+					cartQuantity++
+				} else (
+					console.log('cart penuh guoblok, batas 10')
+				)
+
 console.log(`items in cart = ${cartQuantity};`);"
 			>
 				add to cart
@@ -37,9 +40,15 @@ console.log(`items in cart = ${cartQuantity};`);"
 			<button
 				class="btn btn-orange"
 				onclick="
-// cartQuantity = cartQuantity + 2;
-// shortcutnya itu
-cartQuantity += 2;
+				if (cartQuantity < 9) {
+					cartQuantity+=2
+				} else if (cartQuantity===9){
+					cartQuantity++;
+					console.log('cart penuh, batas 10')
+				}
+				else {
+					console.log('cart penuh guoblok, batas 10')
+				}
 console.log(`items in cart = ${cartQuantity};`);"
 			>
 				add to cart x2
@@ -48,9 +57,38 @@ console.log(`items in cart = ${cartQuantity};`);"
 			<button
 				class="btn btn-orange"
 				onclick="
+				if (cartQuantity > 0) {
+					cartQuantity--
+				} else (
+					console.log('cart kosong guoblok')
+				)
+
+console.log(`items in cart = ${cartQuantity};`);"
+			>
+				remove from cart
+			</button>
+
+			<button
+				class="btn btn-orange"
+				onclick="
+				if (cartQuantity > 1) {
+					cartQuantity-=2
+				} else if (cartQuantity===1){
+					cartQuantity--;
+					console.log('cart kosong')
+				}
+				else {
+					console.log('cart kosong guoblok')
+				}
+console.log(`items in cart = ${cartQuantity};`);"
+			>
+				remove from cart x2
+			</button>
+
+			<button
+				class="btn btn-orange"
+				onclick="
 console.log('chet ulang wa ke riset');
-// cartQuantity = cartQuantity * 0;
-// shortcutnya itu
 cartQuantity *= 0;
 console.log(`items in cart = ${cartQuantity};`);
 "

@@ -3,11 +3,217 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>top secret mommy asmr</title>
+		<title>top secret mlumei asmr</title>
 		<link rel="stylesheet" href="06.css" />
 	</head>
 
 	<body>
+		<div class="game">
+			<div class="game-heading">
+				<p>
+					suit lu, kalah palalo w genjreng
+					<button
+						class="btn btn-yellow"
+						onclick="
+			console.log(`win = ${winCounter}
+lose = ${loseCounter}
+tie = ${tieCounter}`)"
+					>
+						check
+					</button>
+				</p>
+			</div>
+
+			<button
+				class="btn btn-orange gunting"
+				onclick="
+computerPickMove();
+
+console.log(randomPick);
+computerPick = `komputer milih ${randomPick}!!`;
+
+if (randomPick === 'gunting') {
+	console.log(tieMessage);
+	tieCounter++;
+	result = tieMessage;
+} else if (randomPick === 'batu') {
+	console.log(loseMessage);
+	result = loseMessage;
+	loseCounter++;
+} else if (randomPick === 'kertas') {
+	console.log(winMessage);
+	winCounter++;
+	result = winMessage;
+}
+
+alert(`${computerPick}
+${result}`);
+
+"
+			>
+				Gunting
+			</button>
+
+			<button
+				class="btn btn-orange batu"
+				onclick="
+
+computerPickMove();
+
+console.log(randomPick);
+computerPick = `komputer milih ${randomPick}!!`;
+
+if (randomPick === 'gunting') {
+	console.log(winMessage);
+	winCounter++;
+	result = winMessage;
+} else if (randomPick === 'batu') {
+	console.log(tieMessage);
+	result = tieMessage;
+	tieCounter++;
+} else if (randomPick === 'kertas') {
+	console.log(loseMessage);
+	loseCounter++;
+	result = loseMessage;
+}
+
+alert(`${computerPick}
+${result}`);
+			"
+			>
+				batu
+			</button>
+
+			<button
+				class="btn btn-orange kertas"
+				onclick="
+
+computerPickMove();
+
+console.log(randomPick);
+computerPick = `komputer milih ${randomPick}!!`;
+
+if (randomPick === 'gunting') {
+	console.log(loseMessage);
+	result = loseMessage;
+	loseCounter++;
+
+} else if (randomPick === 'batu') {
+	console.log(winMessage);
+	result = winMessage;
+	winCounter++;
+
+} else if (randomPick === 'kertas') {
+	console.log(tieMessage);
+	result = tieMessage;
+	tieCounter++;
+}
+
+alert(`${computerPick}
+${result}`);
+			"
+			>
+				kertas
+			</button>
+		</div>
+
+		<button
+			onclick="
+		const age = 2;
+		const isHoliday = false;
+
+		if ((age <= 6 || age>=65) && !isHoliday ){
+			console.log('diskontol');
+		} else {
+			console.log('ga diskontol')
+		}
+		"
+		>
+			wawa
+		</button>
+
+		<div class="game game2">
+			<button
+				class="btn btn-orange"
+				onclick="
+				randomNumber = Math.random();
+				if (randomNumber < 0.5){
+					result = 'head';
+				} else if (randomNumber >= 0.5){
+					result = 'tail'
+				}
+				console.log('now guess');
+				console.log(result)
+				"
+			>
+				flip
+			</button>
+
+			<button
+				class="btn btn-yellow"
+				onclick="
+			guess = 'head';
+			if (result === guess){
+				console.log(winMessage)
+			} else {
+				console.log(loseMessage)
+			}
+
+			"
+			>
+				head
+			</button>
+			<button
+				class="btn btn-yellow"
+				onclick="
+			guess = 'tail'
+						if (result === guess){
+				console.log(winMessage)
+			} else {
+				console.log(loseMessage)
+			}
+			"
+			>
+				tail
+			</button>
+		</div>
+
+		<div class="game game2">
+			<button
+				class="btn btn-orange"
+				onclick="
+				randomNumber = Math.random();
+				result = randomNumber < 0.5 ? 'head' : 'tail' ;
+				console.log('now guess');
+				console.log(result)
+				"
+			>
+				flip
+			</button>
+
+			<button
+				class="btn btn-yellow"
+				onclick="
+			guess = 'head';
+			result === guess ? console.log(winMessage) : console.log(loseMessage);
+
+			"
+			>
+				head
+			</button>
+			<button
+				class="btn btn-yellow"
+				onclick="
+			guess = 'tail'
+			result === guess ? console.log(winMessage) : console.log(loseMessage);
+			"
+			>
+				tail
+			</button>
+		</div>
+
+
+
 		<script src="06.js"></script>
 	</body>
 </html>
