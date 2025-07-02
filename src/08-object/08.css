@@ -1,0 +1,39 @@
+html {
+	scroll-behavior: smooth;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 16px;
+
+	--horizontalpadding: 2rem;
+}
+
+body {
+	padding: 2rem var(--horizontalpadding);
+}
+
+.btn {
+	padding: 0.25rem 0.5rem;
+	border: none;
+}
+
+.btn-orange {
+	background-color: orange;
+}
+
+.btn-yellow {
+	background-color: yellow;
+}

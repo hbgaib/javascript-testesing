@@ -15,31 +15,31 @@
 					<button
 						class="btn btn-yellow"
 						onclick="
-			console.log(`win = ${winCounter}
-lose = ${loseCounter}
-tie = ${tieCounter}`)"
+			console.log(`win = ${score.win}
+lose = ${score.lose}
+tie = ${score.tie}`)"
 					>
 						check
 					</button>
 				</p>
 			</div>
 
-			<button
-				class="btn btn-orange gunting"
-				onclick="playGame('gunting')">
-				Gunting
-			</button>
+			<button class="btn btn-orange gunting" onclick="playGame('gunting')">Gunting</button>
+
+			<button class="btn btn-orange batu" onclick="playGame('batu')">batu</button>
+
+			<button class="btn btn-orange kertas" onclick="playGame('kertas');">kertas</button>
 
 			<button
-				class="btn btn-orange batu"
-				onclick="playGame('batu')">
-				batu
-			</button>
-
-			<button
-				class="btn btn-orange kertas"
-				onclick="playGame('kertas');">
-				kertas
+				class="btn btn-yellow"
+				onclick="
+			score.win=0; score.lose=0; score.tie=0; 
+			console.log(` score is reset
+menang = ${score.win} kalah = ${score.lose} seri = ${score.tie}`);
+			localStorage.removeItem('score');
+			"
+			>
+				reset
 			</button>
 		</div>
 
@@ -105,37 +105,10 @@ tie = ${tieCounter}`)"
 		</div>
 
 		<div class="game game2">
-			<button
-				class="btn btn-orange"
-				onclick="
-				randomNumber = Math.random();
-				result = randomNumber < 0.5 ? 'head' : 'tail' ;
-				console.log('now guess');
-				console.log(result)
-				"
-			>
-				flip
-			</button>
+			<!-- <button class="btn btn-orange" onclick="computerFlip();">flip</button> -->
 
-			<button
-				class="btn btn-yellow"
-				onclick="
-			guess = 'head';
-			result === guess ? console.log(winMessage) : console.log(loseMessage);
-
-			"
-			>
-				head
-			</button>
-			<button
-				class="btn btn-yellow"
-				onclick="
-			guess = 'tail'
-			result === guess ? console.log(winMessage) : console.log(loseMessage);
-			"
-			>
-				tail
-			</button>
+			<button class="btn btn-yellow" onclick="flipGuess('head')">head</button>
+			<button class="btn btn-yellow" onclick="flipGuess('tail')">tail</button>
 		</div>
 
 		<script src="06.js"></script>

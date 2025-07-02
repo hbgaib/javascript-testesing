@@ -1,10 +1,20 @@
 let randomNumber = '';
 
 let result = '';
-let tieCounter = 0;
-let winCounter = 0;
-let loseCounter = 0;
 let guess = '';
+
+defaultScore = {
+	win: 0,
+	lose: 0,
+	tie: 0,
+};
+
+ defaultScoreFlip = {
+	win: 0,
+	lose: 0,
+};
+const score = JSON.parse(localStorage.getItem('score') || defaultScore);
+const scoreFlip = JSON.parse(localStorage.getItem('scoreFlip') || defaultScoreFlip);
 
 const tieMessage = 'seri wooo seri tie';
 const loseMessage = 'kalah!! yahaha kalah ama bot!!!';
@@ -13,7 +23,7 @@ const winMessage = 'menang?? menang dari bot bangga??';
 function computerPickMove() {
 	let randomPick = '';
 	const randomNumber = Math.random();
-	console.log(randomNumber);
+	// console.log(randomNumber);
 	if (randomNumber >= 0 && randomNumber < 1 / 3) {
 		randomPick = 'gunting';
 	} else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
@@ -34,46 +44,65 @@ function playGame(selectPick) {
 		if (randomPick === 'gunting') {
 			console.log(loseMessage);
 			result = loseMessage;
-			loseCounter++;
 		} else if (randomPick === 'batu') {
 			console.log(winMessage);
 			result = winMessage;
-			winCounter++;
 		} else if (randomPick === 'kertas') {
 			console.log(tieMessage);
 			result = tieMessage;
-			tieCounter++;
 		}
 	} else if (selectPick === 'batu') {
 		if (randomPick === 'gunting') {
 			console.log(winMessage);
-			winCounter++;
 			result = winMessage;
 		} else if (randomPick === 'batu') {
 			console.log(tieMessage);
 			result = tieMessage;
-			tieCounter++;
 		} else if (randomPick === 'kertas') {
 			console.log(loseMessage);
-			loseCounter++;
 			result = loseMessage;
 		}
 	} else if (selectPick === 'gunting') {
 		if (randomPick === 'gunting') {
 			console.log(tieMessage);
-			tieCounter++;
 			result = tieMessage;
 		} else if (randomPick === 'batu') {
 			console.log(loseMessage);
 			result = loseMessage;
-			loseCounter++;
 		} else if (randomPick === 'kertas') {
 			console.log(winMessage);
-			winCounter++;
 			result = winMessage;
 		}
 	}
+	if (result === winMessage) {
+		score.win += 1;
+	} else if (result === loseMessage) {
+		score.lose += 1;
+	} else if (result === tieMessage) {
+		score.tie += 1;
+	}
 
 	alert(`${yourPick}, ${computerPick}
-${result}`);
+${result}
+menang = ${score.win} kalah = ${score.lose} seri = ${score.tie}`);
+	localStorage.setItem('score', JSON.stringify(score));
+}
+
+function computerFlip() {
+	result = Math.random() < 0.5 ? 'head' : 'tail';
+	return result;
+}
+
+function flipGuess(guess) {
+	computerFlip();
+	if (result === guess) {
+		console.log(winMessage);
+		scoreFlip.win++;
+	} else if (result !== guess) {
+		console.log(loseMessage);
+		scoreFlip.lose++;
+	}
+	console.log(scoreFlip);
+	localStorage.setItem('scoreFlip', JSON.stringify(scoreFlip));
+	// localStorage.setItem('scoreFlip', JSON.stringify(scoreFlip));
 }
